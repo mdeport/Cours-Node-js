@@ -98,3 +98,6 @@ console.log("");
 console.log("");
 console.log("Exercice 3: ");
 console.log(Somme_tableau(tableau_pair));
+console.log("");
+console.log("");
+console.log("Exercice 4: ");
