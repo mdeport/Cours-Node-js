@@ -12,8 +12,8 @@ export function Array_value_max(array) {
 
 //3 Écrivez une fonction qui prend une chaîne de caractères et renvoie une nouvelle chaîne de caractères dont toutes les voyelles ont été supprimées.
 //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace
-export function Rm_voyelle(value) {
-  return value.replace(/[aeiouy]/g, "");
+export function Rm_voyelle(chaine_caractere) {
+  return chaine_caractere.replace(/[aeiouy]/g, "");
 }
 
 //4 Écrivez une fonction qui prend un tableau de chaînes de caractères et renvoie un tableau de chaînes de caractères triées par ordre alphabétique.
