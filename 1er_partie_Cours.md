@@ -179,3 +179,32 @@ function logger(req, res, next) {
 ```
 
 sa sert par exemple sur le systeme authentification, si l'utilisateur est authentifié, il peut acceder a la page, sinon il est redirigé vers la page de connexion ou une page d'erreur.
+
+## 7. MVC
+
+### 7.1 Introduction
+
+MVC est un modèle d'architecture logicielle qui sépare les données, la logique métier et l'interface utilisateur. En Node.js, MVC est utilisé pour organiser le code d'une application web en trois parties distinctes : les modèles, les vues et les contrôleurs.
+
+### 7.2 Les modèles
+
+Les modèles sont des classes qui représentent les données de l'application. Ils sont utilisés pour stocker, récupérer et manipuler les données de l'application.
+
+### 7.3 Les vues
+
+Les vues sont des fichiers qui représentent l'interface utilisateur de l'application. Elles sont utilisées pour afficher les données de l'application à l'utilisateur.
+
+### 7.4 Les contrôleurs
+
+Les contrôleurs sont des classes qui contiennent la logique métier de l'application. Ils sont utilisés pour traiter les requêtes des utilisateurs et pour interagir avec les modèles et les vues.
+le pont qui relie les modèles et les vues.
+
+## 8. Connection a une base de données
+
+### 8.1 Introduction
+
+Pour se connecter à une base de données en Node.js, on va utiliser un module appelé `mysql`. Ce module nous permet de se connecter à une base de données MySQL et d'exécuter des requêtes SQL.
+
+### 8.2 Quelle base de données
+
+Mysql2
