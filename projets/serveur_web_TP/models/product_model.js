@@ -28,4 +28,8 @@ export class Product {
   static delete(productId) {
     return database.execute("DELETE FROM Panier WHERE id = ?", [productId]);
   }
+
+  update() {
+    return database.execute("UPDATE Products SET name = ?, price = ?, description = ?, image = ? WHERE id = ?", [this.name, this.price, this.description, this.imageUrl, this.id]);
+  }
 }

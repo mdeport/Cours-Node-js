@@ -32,7 +32,6 @@ export const getProduct = (req, res, next) => {
 };
 
 export const postAddProduct = (req, res, next) => {
-  console.log(req.body);
   const product = new Product(req.body.id, req.body.name, req.body.price, req.body.description, req.body.imageUrl);
   product
     .save()

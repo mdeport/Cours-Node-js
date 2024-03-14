@@ -10,9 +10,9 @@
   </head>
   <body>
     <%- include('includes/navigation.ejs') %>
-    <h1>Shop</h1>
-    <div class="row">
-      <div class="card" style="width: 18rem; margin: 20px">
+    <h1 style="display: flex; justify-content: center; font-weight: bold">Détails du produit <%= product.name %></h1>
+    <div class="container" style="display: flex; justify-content: center; margin-top: 20px; margin-bottom: 20px">
+      <div class="card" style="width: 40rem; display: flex; justify-content: center">
         <img src="/images/setup.jpeg" class="card-img-top" alt="..." />
         <div class="card-body">
           <h5 class="card-title"><%= product.name %></h5>
