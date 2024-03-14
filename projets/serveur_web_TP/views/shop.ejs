@@ -10,16 +10,22 @@
   </head>
   <body>
     <%- include('includes/navigation.ejs') %>
-    <h1>Shop</h1>
+    <h1 style="display: flex; justify-content: center; font-weight: bold">Shop</h1>
     <div class="row">
       <% products.forEach(function(products) {%>
       <div class="card" style="width: 18rem; margin: 20px">
         <img src="/images/setup.jpeg" class="card-img-top" alt="image" />
         <div class="card-body">
           <h5 class="card-title"><%= products.name %></h5>
-          <p class="card-text"><%= products.price %></p>
+          <p class="card-text"><%= products.price %> €</p>
           <a href="/shop/<%= products.id %> " class="btn btn-primary">Détails</a>
-          <a href="#" class="btn btn-primary">Ajouter au panier</a>
+          <form action="/shop" method="POST">
+            <input type="hidden" name="name" value="<%= products.name %>" />
+            <input type="hidden" name="price" value="<%= products.price %>" />
+            <input type="hidden" name="description" value="<%= products.description %>" />
+            <input type="hidden" name="imageUrl" value="/images/setup.jpeg" />
+            <button type="submit" class="btn btn-primary" style="margin-top: 10px">Ajouter au panier</button>
+          </form>
         </div>
       </div>
       <%},);%>

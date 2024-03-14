@@ -1,9 +1,11 @@
 import Express from "express";
 import shopRouter from "./routes/shop.js";
 import panierRouter from "./routes/panier.js";
+import bodyParser from "body-parser";
 
 const app = Express();
 
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(Express.static("public"));
 //http://localhost:3000/images/toto.png
 //configure mon applications pour qu'elle utilise ejs comme moteur de templating

@@ -9,7 +9,22 @@
   </head>
   <body>
     <%- include('includes/navigation.ejs') %>
-    <h1>Mon panier</h1>
-    <%- include('includes/footer.ejs') %>
+    <h1 style="display: flex; justify-content: center; font-weight: bold">Mon panier</h1>
+    <div class="row">
+      <% products.forEach(function(products) {%>
+      <div class="card text-center" style="margin-top: 10px; margin-bottom: 10px">
+        <div class="card-header" style="font-size: x-large"><%= products.name %></div>
+        <div class="card-body">
+          <img src="/images/setup.jpeg" class="card-img-top" alt="image" style="width: 22rem; margin: 20px" />
+          <h5 class="card-title" style="font-size: large"><%= products.price %> €</h5>
+          <p class="card-text"><%= products.description %></p>
+          <form action="/panier" method="POST">
+            <input type="hidden" name="id" value="<%= products.id %>" />
+            <button type="submit" class="btn btn-primary" style="margin-top: 10px">Supprimer du panier</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <%},);%> <%- include('includes/footer.ejs') %>
   </body>
 </html>

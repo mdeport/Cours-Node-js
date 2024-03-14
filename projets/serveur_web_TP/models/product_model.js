@@ -16,4 +16,16 @@ export class Product {
   static findById(id) {
     return database.query("SELECT * FROM Products WHERE Products.id = ?", [id]);
   }
+
+  static fetchAllPanier() {
+    return database.query("SELECT * FROM Panier");
+  }
+
+  save() {
+    return database.execute("INSERT INTO Panier (id, name, price, description, image) VALUES (?, ?, ?, ?, ?)", [null, this.name, this.price, this.description, this.imageUrl]);
+  }
+
+  static delete(productId) {
+    return database.execute("DELETE FROM Panier WHERE id = ?", [productId]);
+  }
 }

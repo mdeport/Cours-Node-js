@@ -205,6 +205,10 @@ le pont qui relie les modèles et les vues.
 
 Pour se connecter à une base de données en Node.js, on va utiliser un module appelé `mysql`. Ce module nous permet de se connecter à une base de données MySQL et d'exécuter des requêtes SQL.
 
-### 8.2 Quelle base de données
+## 9. Les structure de controle
 
-Mysql2
+Les structures de contrôle sont des instructions qui permettent de contrôler le flux d'exécution d'un programme. En JavaScript, on utilise des structures de contrôle telles que `if`, `else`, `switch`, `for`, `while`, etc.
+
+## 10. fondamentaux express
+
+les brique principal sont les middleware, les routes et les vues.
