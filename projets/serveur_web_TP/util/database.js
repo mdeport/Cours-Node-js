@@ -5,6 +5,6 @@ const connection = await mysql.createConnection({
   database: "CoursNodeTp",
   user: "root",
   password: "example",
-});
+}); // crée une connexion à la base de données
 
 export default connection;

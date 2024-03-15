@@ -10,26 +10,26 @@ export class Product {
   }
 
   static fetchAll() {
-    return database.query("SELECT * FROM Products");
+    return database.query("SELECT * FROM Products"); // fait une requête SQL pour récupérer tous les produits
   }
 
   static findById(id) {
-    return database.query("SELECT * FROM Products WHERE Products.id = ?", [id]);
+    return database.query("SELECT * FROM Products WHERE Products.id = ?", [id]); // fait une requête SQL pour récupérer un produit par son id
   }
 
   static fetchAllPanier() {
-    return database.query("SELECT * FROM Panier");
+    return database.query("SELECT * FROM Panier"); // fait une requête SQL pour récupérer tous les produits du panier
   }
 
   save() {
-    return database.execute("INSERT INTO Panier (id, name, price, description, image) VALUES (?, ?, ?, ?, ?)", [null, this.name, this.price, this.description, this.imageUrl]);
+    return database.execute("INSERT INTO Panier (id, name, price, description, image) VALUES (?, ?, ?, ?, ?)", [null, this.name, this.price, this.description, this.imageUrl]); // fait une requête SQL pour ajouter un produit au panier
   }
 
   static delete(productId) {
-    return database.execute("DELETE FROM Panier WHERE id = ?", [productId]);
+    return database.execute("DELETE FROM Panier WHERE id = ?", [productId]); // fait une requête SQL pour supprimer un produit du panier
   }
 
   update() {
-    return database.execute("UPDATE Products SET name = ?, price = ?, description = ?, image = ? WHERE id = ?", [this.name, this.price, this.description, this.imageUrl, this.id]);
+    return database.execute("UPDATE Products SET name = ?, price = ?, description = ? WHERE id = ?", [this.name, this.price, this.description, this.id]); // fait une requête SQL pour mettre à jour un produit
   }
 }

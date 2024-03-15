@@ -10,10 +10,7 @@
   </head>
   <body>
     <%- include('includes/navigation.ejs') %>
-    <div class="row">
-      <h1 style="display: flex; justify-content: center; font-weight: bold">Shop</h1>
-      <a href="#" class="btn btn-primary">Modifier les produits</a>
-    </div>
+    <h1 style="display: flex; justify-content: center; font-weight: bold">Shop</h1>
     <div class="row">
       <% products.forEach(function(products) {%>
       <div class="card" style="width: 18rem; margin: 20px">
@@ -29,14 +26,6 @@
             <input type="hidden" name="imageUrl" value="/images/setup.jpeg" />
             <button type="submit" class="btn btn-primary" style="margin-top: 10px">Ajouter au panier</button>
           </form>
-          <!-- <form action="/shop" method="post">
-            <input type="hidden" name="id" value="<%= products.id %>" />
-            <input type="hidden" name="name" value="<%= products.name %>" />
-            <input type="hidden" name="price" value="<%= products.price %>" />
-            <input type="hidden" name="description" value="<%= products.description %>" />
-            <input type="hidden" name="imageUrl" value="/images/setup.jpeg" />
-            <button type="submit" class="btn btn-primary" style="margin-top: 10px">Modifier le produits : <%= products.name%></button>
-          </form> -->
         </div>
       </div>
       <%},);%>

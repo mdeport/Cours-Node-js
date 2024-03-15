@@ -3,8 +3,8 @@ import { getProductsPanier, postDeleteProduct } from "../controlleurs/panier_con
 
 const router = express.Router();
 
-router.get("/", getProductsPanier);
+router.get("/", getProductsPanier); // c'est la route qui va être utilisée pour afficher le panier
 
-router.post("/", postDeleteProduct);
+router.post("/", postDeleteProduct); // c'est la route qui va être utilisée pour supprimer un produit du panier
 
 export default router;
