@@ -2,31 +2,45 @@ GET http://localhost:3001
 
 ###
 
-GET http://localhost:3001/cars
+GET http://localhost:3001/Pizza
 
 ###
 
-GET http://localhost:3001/cars/4
+GET http://localhost:3001/Pizza/4
 
 
 ###
 
-POST http://localhost:3001/cars
+POST http://localhost:3001/Pizza
 Content-Type: application/json
 
 {
-  "brand": "Ferrari",
-  "model": "F8 Tributo"
+    "name": "Calzone",
+    "base": "Tomate",
+    "price": 10.99,
+    "ingredients": ["Sauce Tomate", "Mozzarella", "Jambon", "Champignons", "Œuf"],
+    "description": "Une pizza pliée en forme de chausson garnie de sauce tomate, de mozzarella, de jambon, de champignons et d'œuf.",
+    "rating": 4.5,
+    "available": true,
+    "size": ["Moyenne", "Grande"],
+    "allergens": ["Gluten", "Produits Laitiers", "Œuf"],
 }
 
 ###
 
-PUT http://localhost:3001/cars/4
+PUT http://localhost:3001/Pizza/4
 Content-Type: application/json
 
 {
-  "brand": "porshe",
-  "model": "911"
+    "name": "nordique",
+    "base": "Tomate",
+    "price": 10.99,
+    "ingredients": ["Sauce Tomate", "Mozzarella", "Saumon", "Crevettes", "Aneth"],
+    "description": "Une pizza garnie de sauce tomate, de mozzarella, de saumon, de crevettes et d'aneth.",
+    "rating": 4.5,
+    "available": true,
+    "size": ["Moyenne", "Grande"],
+    "allergens": ["Gluten", "Produits Laitiers", "Poisson", "Crustacés"],
 }
 
 ###

@@ -1,5 +1,5 @@
 import express from "express";
-import carsRouter from "./routes/cars.js";
+import pizzaRouter from "./routes/pizza.js";
 
 const app = express();
 
@@ -12,7 +12,7 @@ const Port = process.env.PORT || 3001;
 
 app.use(express.json());
 
-app.use("/cars", carsRouter);
+app.use("/pizza", pizzaRouter);
 
 app.get("/", (req, res) => {
   res.json({ message: "Hello World!" });
