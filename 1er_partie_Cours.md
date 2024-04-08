@@ -136,10 +136,10 @@ ESM = EcmaScript Module
 Exemple de syntaxe CommonJS :
 
 ```javascript
-
+const fs = require("fs");
 ```
 
-### 4.3 Quesque un callback
+### 4.3 Quesqu'un callback
 
 Un callback est une fonction qui est passée en argument à une autre fonction. Elle est appelée une fois que l'autre fonction a terminé son exécution.
 
@@ -159,7 +159,9 @@ Pour créer un serveur web en Node.js, on va utiliser le module `http`. Ce modul
 
 1. créer un fichier `server.js`
 2. NPM init
-3. dans le fichier
+3. installer le module `http`
+4. importer le module `http`
+5. créer un serveur web
 
 ## 6. Middleware
 
