@@ -2,4 +2,32 @@ GET http://localhost:3001
 
 ###
 
-GET http://localhost:3001/health
+GET http://localhost:3001/cars
+
+###
+
+GET http://localhost:3001/cars/4
+
+
+###
+
+POST http://localhost:3001/cars
+Content-Type: application/json
+
+{
+  "brand": "Ferrari",
+  "model": "F8 Tributo"
+}
+
+###
+
+PUT http://localhost:3001/cars/4
+Content-Type: application/json
+
+{
+  "brand": "porshe",
+  "model": "911"
+}
+
+###
+DELETE http://localhost:3001/cars/11
