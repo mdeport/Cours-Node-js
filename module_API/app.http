@@ -45,3 +45,26 @@ Content-Type: application/json
 
 ###
 DELETE http://localhost:3001/Pizza/66150c79375dc34fe2367284
+
+
+### 
+
+POST http://localhost:3001/auth/signin
+Content-Type: application/json
+
+{
+    "email": "admin",
+    "password": "admin"
+}
+
+###
+
+POST http://localhost:3001/auth/signup
+Content-Type: application/json
+
+{
+    "email": "mehdi.terrane",
+    "password": "mehditerrane",
+    "name": "mehdi",
+    "phoneNumber": "0606060606"
+}
