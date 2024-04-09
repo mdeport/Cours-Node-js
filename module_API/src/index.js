@@ -1,23 +1,36 @@
+import "dotenv/config";
 import express from "express";
 import pizzaRouter from "./routes/pizza.js";
+import authRoutes from "./routes/auth.js";
+import mongoose from "mongoose";
+import isAuth from "./middlewares/auth.js";
 
 const app = express();
 
-const Port = process.env.PORT || 3001;
+console.log("env: ", process.env.MONGO_STRING);
 
-//middleware
-//middleware qui se charge de rediriger les req
-//qui concernents les voitures vers le router des voitures
-//http://localhost:3001/cars
+const PORT = process.env.PORT || 3001;
+const MONGO_STRING = process.env.MONGO_STRING;
 
 app.use(express.json());
 
-app.use("/pizza", pizzaRouter);
+app.use("/pizza", isAuth, pizzaRouter);
+app.use("/auth", authRoutes);
 
-app.get("/", (req, res) => {
-  res.json({ message: "Hello World!" });
+app.use((error, req, res, next) => {
+  res.status(500).json({ message: error.message });
 });
 
-app.listen(Port, () => {
-  console.log(`Server is running on port ${Port}`);
+app.use("/error", (req, res) => {
+  try {
+    throw new Error("Une erreur est survenue");
+  } catch (error) {}
+});
+
+mongoose.connect(MONGO_STRING).then(() => {
+  console.log("Connected to MongoDB");
+
+  app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+  });
 });

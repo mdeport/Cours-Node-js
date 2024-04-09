@@ -6,7 +6,7 @@ GET http://localhost:3001/Pizza
 
 ###
 
-GET http://localhost:3001/Pizza/4
+GET http://localhost:3001/Pizza/66150402e4a664bc4c9a9360
 
 
 ###
@@ -17,18 +17,18 @@ Content-Type: application/json
 {
     "name": "Calzone",
     "base": "Tomate",
-    "price": 10.99,
+    "price": 4,
     "ingredients": ["Sauce Tomate", "Mozzarella", "Jambon", "Champignons", "Œuf"],
     "description": "Une pizza pliée en forme de chausson garnie de sauce tomate, de mozzarella, de jambon, de champignons et d'œuf.",
-    "rating": 4.5,
+    "rating": 6,
     "available": true,
     "size": ["Moyenne", "Grande"],
-    "allergens": ["Gluten", "Produits Laitiers", "Œuf"],
+    "allergens": ["Gluten", "Produits Laitiers", "Œuf"]
 }
 
 ###
 
-PUT http://localhost:3001/Pizza/4
+PUT http://localhost:3001/Pizza/66150c79375dc34fe2367284
 Content-Type: application/json
 
 {
@@ -40,8 +40,8 @@ Content-Type: application/json
     "rating": 4.5,
     "available": true,
     "size": ["Moyenne", "Grande"],
-    "allergens": ["Gluten", "Produits Laitiers", "Poisson", "Crustacés"],
+    "allergens": ["Gluten", "Produits Laitiers", "Poisson", "Crustacés"]
 }
 
 ###
-DELETE http://localhost:3001/cars/11
+DELETE http://localhost:3001/Pizza/66150c79375dc34fe2367284
