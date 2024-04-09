@@ -63,8 +63,8 @@ POST http://localhost:3001/auth/signup
 Content-Type: application/json
 
 {
-    "email": "mehdi.terrane",
-    "password": "mehditerrane",
+    "email": "mehdi.terran",
+    "password": "Mzzzz?21",
     "name": "mehdi",
     "phoneNumber": "0606060606"
 }
