@@ -63,8 +63,25 @@ POST http://localhost:3001/auth/signup
 Content-Type: application/json
 
 {
-    "email": "mehdi.terrane@gmail.com",
-    "password": "Mzzzz?21",
-    "name": "mehdi",
+    "email": "sam.enerve@gmail.com",
+    "password": "Testtest?21",
+    "name": "sam",
     "phoneNumber": "0606060606"
 }
+
+###
+
+POST http://localhost:3001/commande 
+Content-Type: application/json
+
+{
+    "client": "sam.enerve@gmail.com",
+    "pizzas": "66163eec09aaa15198ec60d3",
+    "taille": "Grande",
+    "quantite": 1,
+    "status": "En cours"
+}
+
+###
+
+GET http://localhost:3001/commande
