@@ -11,7 +11,7 @@ router.get("/", getPizzas);
 router.get("/:id", getPizza);
 
 // POST http://localhost:3001/pizza
-router.post("/", [body("name").trim().isLength({ max: 20, min: 2 }), body("price").trim().isFloat({ min: 0, max: 10000 }), body("raiting").trim().isFloat({ min: 0, max: 5 })], createPizza);
+router.post("/", [body("name").trim().isLength({ max: 20, min: 2 }), body("price").trim().isFloat({ min: 0, max: 10000 })], createPizza);
 
 // PUT http://localhost:3001/pizza/1 creer une route qui
 // permet de modiier une voiture

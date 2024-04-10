@@ -53,8 +53,8 @@ POST http://localhost:3001/auth/signin
 Content-Type: application/json
 
 {
-    "email": "admin",
-    "password": "admin"
+    "email": "mehdi.terrane@gmail.com",
+    "password": "Mzzzz?21"
 }
 
 ###
@@ -63,7 +63,7 @@ POST http://localhost:3001/auth/signup
 Content-Type: application/json
 
 {
-    "email": "mehdi.terran",
+    "email": "mehdi.terrane@gmail.com",
     "password": "Mzzzz?21",
     "name": "mehdi",
     "phoneNumber": "0606060606"

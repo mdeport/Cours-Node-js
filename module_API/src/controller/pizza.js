@@ -53,21 +53,14 @@ export const updatePizza = async (request, response) => {
   } else {
     response.status(404).json({ message: "Pizza not found" });
   }
-  /*if (pizza) {
-    const updatedpizza = { ...pizza, ...bodyContent };
-    const index = listPizza.findIndex((pizza) => pizza.id === id);
-    listPizza[index] = updatedpizza;
-    response.json(updatedpizza);
-  } else {
-    response.status(404).json({ message: "Pizza not found" });
-  }*/
 };
 
 export const deletePizza = async (request, response) => {
   const id = request.params.id;
   const pizza = await Pizza.findById(id);
+
   if (pizza) {
-    const res = await Pizza.deleteOne(id);
+    const res = await Pizza.deleteOne({ _id: id });
     response.status(204).end();
     response.json({ id, res });
   } else {
