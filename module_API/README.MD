@@ -12,3 +12,10 @@ Une API REST avec NodeJS et ExpressJS :
 - [x] Proteger une route (creation d'un middleware qui verifie le token)
 - [] Mettre en place une API DOC avec Swagger
 - [x] Gerer les erreurs avec un middleware
+
+## Informations requises sur le projet
+
+- la techno utiliser dans le projet est Node.js
+- les langages principale utiliser dans le projet sont JavaScript.
+
+- toutes les requetes a tester dans thunder client ou postman sont dans le fichier app.http

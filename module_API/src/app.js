@@ -3,6 +3,8 @@ import routes from "./routes/index.js";
 import multer from "multer";
 import path from "path";
 import * as url from "url";
+import swaggerUI from "swagger-ui-express";
+import swaggerSpec from "../swagger.js";
 const __dirname = url.fileURLToPath(new URL(".", import.meta.url));
 
 const fileStorage = multer.diskStorage({
@@ -29,6 +31,8 @@ export function CreateApp() {
 
   app.use(multer({ storage: fileStorage, fileFilter: fileFilter }).single("image"));
   console.log("path", path.join(__dirname, "images"));
+
+  app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerSpec));
 
   app.use(routes);
 
