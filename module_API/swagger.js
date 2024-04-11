@@ -9,7 +9,7 @@ const swaggerDefinition = {
 };
 const options = {
   swaggerDefinition,
-  apis: ["./module_API/src/routes/auth.js", "./module_API/src/routes/pizza.js", "./module_API/src/routes/commandes.js", "./module_API/src/routes/index.js"],
+  apis: ["./src/routes/*.js"],
 };
 const swaggerSpec = swaggerJSDoc(options);
 export default swaggerSpec;
