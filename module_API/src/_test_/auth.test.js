@@ -2,10 +2,10 @@ import "dotenv/config";
 import mongoose, { mongo } from "mongoose";
 import request from "supertest";
 const MONGO_STRING = process.env.MONGO_STRING;
-import { CreateApp } from "../app.js";
+import { CreateApp } from "../app-test.js";
 import user from "../models/user.js";
 
-describe("creation d'un utilisateur et login", () => {
+describe("creation d'un utilisateur et login, ajout,affiche, modifie et supprime des pizzas", () => {
   let app;
 
   beforeAll(() => {
@@ -41,6 +41,51 @@ describe("creation d'un utilisateur et login", () => {
     const response = await request(app)
       .get("/pizza")
       .set("Authorization", "Bearer " + token);
+    expect(response.statusCode).toBe(200);
+  });
+
+  let idpizza;
+  it("ajouter une pizza", async () => {
+    const response = await request(app)
+      .post("/pizza")
+      .set("Authorization", "Bearer " + token)
+      .send({
+        name: "Calzone",
+        base: "tomate",
+        price: 10,
+        ingredients: ["Sauce Tomate", "Mozzarella", "Jambon", "Champignons", "Œuf"],
+        description: "Une pizza pliée en forme de chausson garnie de sauce tomate, de mozzarella, de jambon, de champignons et d'œuf.",
+        rating: 5,
+        available: true,
+        size: ["Moyenne", "Grande"],
+        allergens: ["Gluten", "Produits Laitiers", "Œuf"],
+      });
+    expect(response.statusCode).toBe(201);
+    idpizza = response.body._id;
+  });
+
+  it("afficher une pizza", async () => {
+    const response = await request(app)
+      .get("/pizza/" + idpizza)
+      .set("Authorization", "Bearer " + token);
+    expect(response.statusCode).toBe(200);
+  });
+
+  it("modifier une pizza", async () => {
+    const response = await request(app)
+      .put("/pizza/" + idpizza)
+      .set("Authorization", "Bearer " + token)
+      .send({
+        name: "Calzone",
+        base: "tomate",
+        price: 10,
+        ingredients: ["Sauce Tomate", "Mozzarella", "Jambon", "Champignons", "Œuf"],
+        description: "Une pizza pliée en forme de chausson garnie de sauce tomate, de mozzarella, de jambon, de champignons et d'œuf.",
+        rating: 5,
+        available: true,
+        size: ["Moyenne", "Grande"],
+        allergens: ["Gluten", "Produits Laitiers", "Œuf"],
+      });
     expect(response.statusCode).toBe(200);
   });
 
